@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 
-export default function index({ data }) {
+export default function Index({ data }) {
   const router = useRouter();
   const onClick = (id) => {
     router.push(`/rich/${id}`);
@@ -15,7 +16,7 @@ export default function index({ data }) {
             className="person"
             key={person.id}
           >
-            <img src={person.squareImage}></img>
+            <Image alt="person" src={person.squareImage}></Image>
             <h4>{person.name}</h4>
             <div className="info">
               {Math.round(person.netWorth / 1000)} Billion /{" "}

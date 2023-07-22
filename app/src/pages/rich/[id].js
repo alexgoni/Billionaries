@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Detail({ data }) {
   const formatNumberWithCommas = (number) => {
     return number.toLocaleString();
@@ -7,7 +9,7 @@ export default function Detail({ data }) {
     <>
       <div className="container">
         <div className="info">
-          <img src={data.squareImage}></img>
+          <Image alt="person" src={data.squareImage}></Image>
           <h2>{data.name}</h2>
           <div>Networth: {Math.round(data.netWorth / 1000)} Billion</div>
           <div>Country: {data.country}</div>
